@@ -23,12 +23,13 @@ body {
 }
 
 .enemy {
-    background-color: lightslategrey;
-    border-radius: 20px;
+    background-image: url(Images/Ships/ship_0003.png);
+    background-repeat: no-repeat;
 }
 
 .player {
-    background-color: blue;
+    background-image: url(Images/Ships/ship_0019.png);
+    background-repeat: no-repeat;
 }
 
 

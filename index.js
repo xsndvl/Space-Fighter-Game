@@ -1,6 +1,9 @@
 
 const container = document.querySelector('#container')
-var playerPosition = 202
+let playerPosition = 202
+let width = 15
+let direction = 1
+let aliensId
 
 // creates a grid that is 15x15 with the div
 for (let i = 0; i < 225; i++) {
@@ -23,20 +26,48 @@ const placeAliens = () => {
     }
 }
 
+const removeAliens = () => {
+    for (let i = 0; i < aliens.length; i++){
+        squares[aliens[i]].classList.remove('enemy')
+    }
+}
+
 squares[playerPosition].classList.add('player')
 
 placeAliens()
 
-const placePlayer = () => {
 
+const movePlayer = (e) => {
+    squares[playerPosition].classList.remove('player')
+    switch(e.key){
+        case 'ArrowLeft':
+            if (playerPosition % width !== 0) playerPosition -= 1
+            break
+        case 'ArrowRight':
+            if(playerPosition % width < width -1) playerPosition += 1
+            break
+    }
+    squares[playerPosition].classList.add('player')
 }
 
+document.addEventListener('keydown', movePlayer)
 
+const moveAliens = () => {
+    const leftEdge = aliens[0] % width === 0
+    constrightEdge = aliens[aliens.length - 1] % width === width - 1
+    removeAliens()
 
-// const playerMove = (w) => {
-//     console.log("mouse location:", e.clientX, e.clientY)
-// }
+    if(rightEdge) {
+        for (let i = 0; i < aliens.length, i++) {
+            aliens[]
+        }
+    }
 
-// playerMove()
+    for (let i = 0; i < aliens.length; i++) {
+        aliens[i] += direction
+    }
 
-playerPosition.onmousemove = function(e){e.clientX}
+    placeAliens()
+}
+
+aliensId = setInterval(moveAliens, 500)
