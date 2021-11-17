@@ -8,25 +8,27 @@ body {
 }
 
 #container {
-    position: relative;
-    width: 100%
-}
-#background {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 900px;
-}
-
-.buttons{
-    position: absolute;
-
+    margin-left:auto;
+    margin-right:auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#button1 {
-    position: absolute;
-    top: 80%;
+#container div{
+    width: 40px;
+    height: 40px
 }
 
+.enemy {
+    background-color: lightslategrey;
+    border-radius: 20px;
+}
+
+.player {
+    background-color: blue;
+}
 
 
